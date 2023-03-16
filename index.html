@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="BootStrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="Css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Student Form</title>
+  </head>
+
+  <body>
+    <div class="container mt-5 mb-5 px-4 pt-3 rounded-3 bg-light1">
+      <div
+        class="d-flex justify-content-center mb-4 text-decoration-underline mt-1 text-danger border border-2 bg-light1 rounded-3"
+      >
+        <h1 class="h1word"><span class="border border-2 bg-light1 pb-2 border-secondary px-2 rounded-3">Student Form</span></h1>
+        <br />
+      </div>
+      <form name="myForm" onSubmit="return false">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="form-label"><h5>Enter your First name :</h5></label>
+            <input
+              type="text"
+              class="form-control"
+              name="FName"
+              placeholder="First name"
+              aria-label="First name"
+              id="fName"
+            />
+            <div id="FirstNameError" class="text-danger fs-5"></div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label"><h5>Enter your Last name :</h5></label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+              aria-label="Last name"
+              id="lName"
+            />
+            <div id="LastNameError" class="text-danger fs-5"></div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-6">
+            <label for="date" class="form-label"
+              ><h5>Enter your Date of Birth :</h5></label
+            >
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Date of Birth"
+              aria-label="Date of birth"
+              id="dob"
+            />
+            <div id="DobError" class="text-danger fs-5"></div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label"><h5>Enter your Email :</h5></label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="xyz123@gmail.com"
+              aria-label="E-mail"
+              id="email"
+            />
+            <div id="EmailError" class="text-danger fs-5"></div>
+          </div>
+        </div>
+        <br />
+        <div class="mb-3">
+          <label class="form-label"><h5>Enter your Address :</h5></label>
+          <textarea
+            class="form-control"
+            id="address"
+            rows="3"
+            placeholder="Address . . ."
+            id="address"
+          ></textarea>
+          <div id="AddressError" class="text-danger fs-5"></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col">
+            <label for="education" class="form-label"
+              ><h2>Education :</h2></label
+            >
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button class="btn-lg btn-outline-primary" onclick="addRow()">
+              ADD
+            </button>
+          </div>
+        </div>
+        <div class="row mt-3 p-2 bg-light1 border border-2 border-white hide_aa rounded-3">
+          <div class="col-lg-1 col-md-4 col-sm-6">
+            <h5 class="h5word"><span class="border bg-light1 px-1 pb-1 rounded-3">Degree</span></h5>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <h5 class="h5word"><span class="border bg-light1 px-1 pb-1 rounded-3">Institute name</span></h5>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <h5 class="h5word"><span class="border bg-light1 px-1 pb-1 rounded-3">Start Year</span></h5>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <h5 class="h5word"><span class="border bg-light1 px-1 pb-1 rounded-3">PassOut Year</span></h5>
+          </div>
+          <div class="col-lg-1 col-md-4 col-sm-6">
+            <h5 class="h5word"><span class="border bg-light1 px-1 pb-1 rounded-3">Backlog</span></h5>
+          </div>
+          <div class="col-lg-1 col-md-4 col-sm-6">
+            <h5 class="h5word ps-2"><span class="border bg-light1 px-1 pb-1 rounded-3">Percentage</span></h5>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <h5 class="h5word ms-5"><span class="border bg-light1 px-1 pb-1 rounded-3">Action</span></h5>
+          </div>
+        </div>
+        <div id="main_row">
+          <div class="row_border row mt-4">
+            <div class="col-lg-1 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Enter Degree Name</h5></label>
+              <select id="sDegree0" name="Degree" class="Degree form-select">
+                <option value="" hidden>Click</option>
+                <option value="School">School</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Bachelor's">Bachelor's</option>
+                <option value="Master's">Master's</option>
+              </select>
+              <div id="sDegreeError0" class="text-danger"></div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Enter Institute Name</h5></label>
+              <input
+                type="text"
+                name="InstituteName[]"
+                class="instname form-control"
+                id="instName0"
+              />
+              <div id="InstituteError0" class="text-danger"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Select Starting month</h5></label>
+              <input
+                type="month"
+                name="StartYear[]"
+                id="startMonth0"
+                class="startYear form-control"
+              />
+              <div id="startMonthError0" class="text-danger"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Select End month</h5></label>
+              <input
+                type="month"
+                name="PassOutYear[]"
+                id="endMonth0"
+                class="endYear form-control"
+              />
+              <div id="endMonthError0" class="text-danger"></div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Enter Backlog</h5></label>
+              <input
+                type="number"
+                name="Backlog[]"
+                class="backlog form-control"
+                placeholder="If any"
+                id="backlog0"
+              />
+              <div id="BacklogError0" class="text-danger"></div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Percentage</h5></label>
+              <input
+                type="number"
+                name="TotalPercentage"
+                placeholder="%"
+                class="marks form-control"
+                id="TotalPercentage0"
+              />
+              <div id="TotalPercentageError0" class="text-danger"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6"></div>
+          </div>
+          <div class="row_border row mt-4">
+            <div class="col-lg-1 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Enter Degree Name</h5></label>
+              <select id="sDegree1" name="Degree" class="Degree form-select">
+                <option value="" hidden>Click</option>
+                <option value="School">School</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Bachelor's">Bachelor's</option>
+                <option value="Master's">Master's</option>
+              </select>
+              <div id="sDegreeError1" class="text-danger"></div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Enter Institute Name</h5></label>
+              <input
+                type="text"
+                name="InstituteName[]"
+                class="instname form-control"
+                id="instName1"
+              />
+              <div id="InstituteError1" class="text-danger"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Select Starting month</h5></label>
+              <input
+                type="month"
+                name="StartYear[]"
+                id="startMonth1"
+                class="startYear form-control"
+              />
+              <div id="startMonthError1" class="text-danger"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Select End month</h5></label>
+              <input
+                type="month"
+                name="PassOutYear[]"
+                id="endMonth1"
+                class="endYear form-control"
+              />
+              <div id="endMonthError1" class="text-danger"></div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Enter Backlog</h5></label>
+              <input
+                type="number"
+                name="Backlog[]"
+                id="backlog1"
+                placeholder="If any"
+                class="backlog form-control"
+              />
+              <div id="BacklogError1" class="text-danger"></div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-sm-6">
+              <label class="hideLabel"><h5>Percentage</h5></label>
+              <input
+                type="number"
+                name="TotalPercentage"
+                placeholder="%"
+                class="marks form-control"
+                id="TotalPercentage1"
+              />
+              <div id="TotalPercentageError1" class="text-danger"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6"></div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <button class="glow-on-hover mb-3" type="button" onclick="getValue()">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="javascript/script.js"></script>
+    <script src="BootStrap/js/bootstrap.js"></script>
+  </body>
+</html>
